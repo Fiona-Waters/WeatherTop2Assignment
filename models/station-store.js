@@ -4,10 +4,11 @@ const stationList = require('./station-store.json').stationList;
 
 
 const station = {
-  name: undefined,
+  
+  name: name,
   lat: undefined,
-  lng: undefined
-}
+  lng: undefined,
+};
 
 
 module.exports = stationList;
