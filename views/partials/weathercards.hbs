@@ -5,7 +5,7 @@
             <img>
         </div>
         <div class="extra">
-         <h3>  ${_station.name} </h3>
+         <h3>  {{name}} </h3>
             <div class="ui yellow rating" data-rating="1"></div>
         </div>
     </div>
@@ -25,7 +25,10 @@
       </div>
       <div class="extra">
           <h3>Temp</h3>
-          <p>${_station.latestReading?.temperature}C</p>
+        <p>
+          
+        </p>  
+        <p>{{station.readings.temperature}} ${_station.latestReading?.temperature}C</p>
           <p>${_station.fahrenheit}F</p>
           <div class="ui yellow rating" data-rating="3"></div>
       </div>
@@ -49,5 +52,4 @@
           <p>${_station.latestReading?.pressure} hpa</p>
           <div class="ui yellow rating" data-rating="5"></div>
       </div>
-
   </div>
