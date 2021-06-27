@@ -1,7 +1,7 @@
 'use strict';
 
 const analytics = {
-  fillWeatherCodes(request, response){
+  fillWeatherCodes(code, weatherCode){
 const weatherCodes = {
   100: "Clear",
   200: "Partial clouds",
@@ -12,6 +12,7 @@ const weatherCodes = {
   700: "Snow",
   800: "Thunder"
 } 
-response.render("dashboard", weatherCodes);
+
 }
+
 };
