@@ -1,6 +1,5 @@
 
 <div class="ui five inverted cards">
-  {{each station.readings}}
     <div class="red card">
         <div class="image">
             <img>
@@ -16,7 +15,7 @@
         </div>
         <div class="extra">
             <h3>Weather</h3>
-            <p>*** </p>
+            <p>{{readings.code}} </p>
           <div class="ui yellow rating" data-rating="2"></div>
       </div>
   </div>
@@ -27,7 +26,7 @@
       <div class="extra">
           <h3>Temp</h3>
        
-        <p>{{reading.temperature}} C</p>
+        <p>{{stationList.[01].temperature}} C</p>
           <p>*** F</p>
           <div class="ui yellow rating" data-rating="3"></div>
       </div>
@@ -48,8 +47,7 @@
       </div>
       <div class="extra">
           <h3>Pressure</h3>
-          <p>*** hpa</p>
+          <p>{{readings.pressure}} hpa</p>
           <div class="ui yellow rating" data-rating="5"></div>
       </div>
-    {{/each}}
   </div>
