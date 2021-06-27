@@ -15,6 +15,7 @@ const dashboard = {
     logger.info('about to render', stationList);
     response.render("dashboard", viewData);
   },
+
 };
 
 module.exports = dashboard;
