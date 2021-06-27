@@ -8,7 +8,7 @@ const dashboard = {
     logger.info("dashboard rendering");
     const viewData = {
       title: "WeatherTop Dashboard",
-      station: stationList,
+      stations: stationList,
     };
     logger.info('about to render', stationList);
     response.render("dashboard", viewData);

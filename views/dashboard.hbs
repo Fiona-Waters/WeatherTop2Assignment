@@ -1,8 +1,33 @@
 {{> menu id="dashboard"}}
 
-<section class="ui segment">
-  <h2 class="ui header">
-    Tramore
-  </h2>
-  {{> listreadings}}
-</section>
+{{#each stations}}
+  <section class="ui segment">
+    <h2 class="ui header">
+      {{name}}
+    </h2>
+    <table class="ui table">
+      <thead>
+        <tr>
+          <th>Code</th>
+          <th>Temperature</th>
+          <th>Wind Speed</th>
+        </tr>
+      </thead>
+      <tbody>
+        {{#each readings}}
+          <tr>
+            <td>
+              {{code}}
+            </td>
+            <td>
+              {{temperature}}
+            </td>
+            <td>
+              {{windSpeed}}
+            </td>
+          </tr>
+        {{/each}}
+      </tbody>
+    </table>
+  </section>
+{{/each}}
