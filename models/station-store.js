@@ -5,7 +5,7 @@ const stationList = require('./station-store.json').stationList;
 
 const station = {
   
-  name: name,
+  name: stationList.name,
   lat: undefined,
   lng: undefined,
 };
