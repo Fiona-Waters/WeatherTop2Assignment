@@ -16,3 +16,4 @@ const weatherCodes = {
 }
 
 };
+module.exports = analytics;
