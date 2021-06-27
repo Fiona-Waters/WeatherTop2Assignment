@@ -1,9 +1,8 @@
 'use strict';
-
 const logger = require("../utils/logger");
 
-const stations = {
-  station: 'Tramore',
+const tramore = {
+  name: 'Tramore',
   readings: [
     {
       code: 800,
@@ -18,4 +17,23 @@ const stations = {
   ],
 };
 
-module.exports = stations;
+const dunmore = {
+  name: 'Dunmore',
+  readings: [
+    {
+      code: 700,
+      temperature: 8.0,
+      windSpeed: 1.0
+    },
+    {
+      code: 200,
+      temperature: 0.5,
+      windSpeed: 3.5,
+    },
+  ],
+};
+
+const stationList = [tramore, dunmore];
+
+
+module.exports = stationList;
