@@ -2,10 +2,8 @@
 
 const logger = require("../utils/logger");
 const stationList = require("../models/station-store.js");
+const analytics = require("../utils/analytics.js");
 
-const celciusToFahrenheit = function(celsius){
-        return celsius * 9/5 + 32;
-      }
 
 
 const dashboard = {
@@ -23,7 +21,7 @@ const dashboard = {
       stationList[i] = station;
         
       let celsuis = lastReading.temperature;
-      station.fahrenheit = celciusToFahrenheit(celsuis);
+      station.fahrenheit = analytics.convertCToF(celsuis);
         //station.fahrenheit();
         logger.info("fahrenheit: ", station.fahrenheit);
     
