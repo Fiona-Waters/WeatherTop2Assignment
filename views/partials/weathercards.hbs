@@ -1,0 +1,53 @@
+
+<div class="ui five inverted cards">
+    <div class="red card">
+        <div class="image">
+            <img>
+        </div>
+        <div class="extra">
+         <h3>  {{name}} </h3>
+            <div class="ui yellow rating" data-rating="1"></div>
+        </div>
+    </div>
+    <div class="orange card">
+        <div class="image">
+            <img>
+        </div>
+        <div class="extra">
+            <h3>Weather</h3>
+            <p>{{weatherCondition}} </p>
+          <div class="ui yellow rating" data-rating="2"></div>
+      </div>
+  </div>
+  <div class="yellow card">
+      <div class="image">
+          <img>
+      </div>
+      <div class="extra">
+          <h3>Temp</h3>
+       
+        <p>{{lastReading.temperature}} C</p>
+          <p>{{fahrenheit}} F</p>
+          <div class="ui yellow rating" data-rating="3"></div>
+      </div>
+  </div>
+  <div class="green card">
+      <div class="image">
+          <img>
+      </div>
+      <div class="extra">
+          <h3>Wind</h3>
+          <p>{{beaufort}} bft</p>
+          <div class="ui yellow rating" data-rating="4"></div>
+      </div>
+  </div>
+  <div class="blue card">
+      <div class="image">
+          <img>
+      </div>
+      <div class="extra">
+          <h3>Pressure</h3>
+          <p>{{lastReading.pressure}} hpa</p>
+          <div class="ui yellow rating" data-rating="5"></div>
+      </div>
+  </div>
