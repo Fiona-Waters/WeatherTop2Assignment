@@ -33,15 +33,15 @@ const analytics = {
     return beaufort;
   },
   
-  fillWeatherCodes: function(){
-   (100, "Clear");
+  fillWeatherCodes: function(weatherCode){
+    const 100 = {name: "Clear"};
     (200, "Partial clouds");
-    weatherCodes.put(300, "Cloudy");
-    weatherCodes.put(400, "Light Showers");
-    weatherCodes.put(500, "Heavy Showers");
-    weatherCodes.put(600, "Rain");
-    weatherCodes.put(700, "Snow");
-    weatherCodes.put(800, "Thunder");
+    (300, "Cloudy");
+    (400, "Light Showers");
+    (500, "Heavy Showers");
+    (600, "Rain");
+    (700, "Snow");
+    (800, "Thunder");
   }
 
   
