@@ -3,25 +3,22 @@
 const logger = require("../utils/logger");
 const stationList = require("../models/station-store.js");
 
-const setCardsForStation = function(station) {
-  station.name = station.name + " Ciaran is Cool";
-  return station;
-}
+
 
 
 const dashboard = {
   index(request, response) {
     logger.info("dashboard rendering");
     
-    const newStationList = stationList.map(setCardsForStation);
-    /*
+    
     for(let i = 0; i < stationList.length; i++) {
       const station = stationList[i];
-      logger.info('Station', station);
+      //logger.info('Station', station);
       
-      const lastReading = station.readings.length-1;
+      const lastReading = station.readings[station.readings.length-1];
+      logger.info("last reading :", lastReading);
     }
-    */
+    
     
     
     
@@ -29,7 +26,7 @@ const dashboard = {
     
     const viewData = {
       title: "WeatherTop Dashboard",
-      stations: newStationList
+      stations: stationList
     };
     //logger.info('about to render', stationList);
     response.render("dashboard", viewData);
