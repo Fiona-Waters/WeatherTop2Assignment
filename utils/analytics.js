@@ -15,5 +15,8 @@ const weatherCodes = {
 
 }
 
+  const lastReading = 
+  
+  
 };
 module.exports = analytics;
