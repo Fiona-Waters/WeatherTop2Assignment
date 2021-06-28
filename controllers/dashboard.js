@@ -13,15 +13,13 @@ const dashboard = {
     
     for(let i = 0; i < stationList.length; i++) {
       const station = stationList[i];
-      //logger.info('Station', station);
       
       const lastReading = station.readings[station.readings.length-1];
+      station.lastReading = lastReading;
+      
+      stationList[i] = station;
       logger.info("last reading :", lastReading);
     }
-    
-    
-    
-    
     
     
     const viewData = {
