@@ -23,8 +23,9 @@ const dashboard = {
       station.fahrenheit = analytics.convertCToF(celsuis);
       let windSpeed = lastReading.windSpeed;
       station.beaufort = analytics.convertToBeaufort(windSpeed);
-      let
-      station.weatherCode = analytics.fillWeatherCodes();  
+      let code = lastReading.code;
+      station.weatherCondition = analytics.fillWeatherCodes(code);
+        
       
       logger.info("fahrenheit: ", station.fahrenheit);
       logger.info("last reading :", lastReading);

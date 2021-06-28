@@ -33,19 +33,28 @@ const analytics = {
     return beaufort;
   },
   
-  fillWeatherCodes: function(weatherCode){
-    const 100 = {name: "Clear"};
-    (200, "Partial clouds");
-    (300, "Cloudy");
-    (400, "Light Showers");
-    (500, "Heavy Showers");
-    (600, "Rain");
-    (700, "Snow");
-    (800, "Thunder");
-  }
+ fillWeatherCodes: function(code){
+   let weatherCodes = new Map()
+weatherCodes.set(100, "Clear")
+weatherCodes.set(200, "Partial Clouds")
+weatherCodes.set(300, "Cloudy")
+weatherCodes.set(400, "Light Showers")
+weatherCodes.set(500, "Heavy Showers")
+weatherCodes.set(600, "Rain")
+weatherCodes.set(700, "Snow")
+weatherCodes.set(800, "Thunder")
+   return weatherCodes.get(code);
+ }
+  
+ 
 
   
   
   
 }
+
+
+
+
+
 module.exports = analytics;
