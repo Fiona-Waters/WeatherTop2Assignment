@@ -5,7 +5,6 @@ const stationList = require("../models/station-store.js");
 const analytics = require("../utils/analytics.js");
 
 
-
 const dashboard = {
   index(request, response) {
     logger.info("dashboard rendering");
@@ -22,9 +21,10 @@ const dashboard = {
         
       let celsuis = lastReading.temperature;
       station.fahrenheit = analytics.convertCToF(celsuis);
-        //station.fahrenheit();
-        logger.info("fahrenheit: ", station.fahrenheit);
-    
+      let windSpeed = lastReading.windSpeed;
+      station.beaufort = analytics.convertToBeaufort(windSpeed);
+      
+      logger.info("fahrenheit: ", station.fahrenheit);
       logger.info("last reading :", lastReading);
       }
     }
@@ -34,7 +34,7 @@ const dashboard = {
       title: "WeatherTop Dashboard",
       stations: stationList
     };
-    //logger.info('about to render', stationList);
+    
     response.render("dashboard", viewData);
   },
 };
