@@ -10,15 +10,22 @@ const dashboard = {
   index(request, response) {
     logger.info("dashboard rendering");
     
-    
     for(let i = 0; i < stationList.length; i++) {
       const station = stationList[i];
-      if(stations.readings.length>0)
+      
+      if(station.readings.length>0){
+        
       const lastReading = station.readings[station.readings.length-1];
       station.lastReading = lastReading;
       
       stationList[i] = station;
+      const celsuis = lastReading.temperature;
+      station.fahrenheit = function convertCToF(celsius){
+        return celsius * 9/5 + 32;
+      }
+    
       logger.info("last reading :", lastReading);
+      }
     }
     
     
