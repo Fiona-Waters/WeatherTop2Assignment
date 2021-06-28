@@ -2,7 +2,7 @@
 
 const stationList = require('./station-store.json').stationList;
 
-
+/*
 const station = {
   
   name: stationList.name,
@@ -15,7 +15,7 @@ const station = {
     this.lng = lng;
   }
 };
-
+*/
 
 module.exports = stationList;
 
