@@ -24,6 +24,8 @@ const dashboard = {
       station.fahrenheit = function(celsius){
         return celsius * 9/5 + 32;
       }
+        station.fahrenheit();
+        logger.info("fahrenheit: ", station.fahrenheit);
     
       logger.info("last reading :", lastReading);
       }
