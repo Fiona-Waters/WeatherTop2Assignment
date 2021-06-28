@@ -19,20 +19,16 @@ const dashboard = {
       
       stationList[i] = station;
         
-      let celsuis = lastReading.temperature;
-      station.fahrenheit = analytics.convertCToF(celsuis);
+      let celsius = lastReading.temperature;
+      station.fahrenheit = analytics.convertCToF(celsius);
       let windSpeed = lastReading.windSpeed;
       station.beaufort = analytics.convertToBeaufort(windSpeed);
       let code = lastReading.code;
       station.weatherCondition = analytics.fillWeatherCodes(code);
         
-      
-      logger.info("fahrenheit: ", station.fahrenheit);
-      logger.info("last reading :", lastReading);
       }
     }
-    
-    
+      
     const viewData = {
       title: "WeatherTop Dashboard",
       stations: stationList

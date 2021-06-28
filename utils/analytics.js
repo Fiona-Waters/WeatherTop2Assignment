@@ -46,10 +46,6 @@ weatherCodes.set(800, "Thunder")
    return weatherCodes.get(code);
  }
   
- 
-
-  
-  
   
 }
 
