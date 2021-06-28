@@ -20,8 +20,8 @@ const dashboard = {
       
       stationList[i] = station;
         
-      const celsuis = lastReading.temperature;
-      station.fahrenheit = function convertCToF(celsius){
+      let celsuis = lastReading.temperature;
+      station.fahrenheit = function(celsius){
         return celsius * 9/5 + 32;
       }
     
