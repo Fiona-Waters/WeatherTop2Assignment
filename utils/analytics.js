@@ -82,6 +82,15 @@ weatherCodes.set(800, "Thunder")
       compass = "North North West";
     }
     return compass;
+  },
+  
+   calcWindChill: function(temperature, windSpeed) {
+    let calc = Math.pow(windSpeed, 0.16);
+    let a = 13.12;
+    let b = 0.6215;
+    let c = 11.37;
+    let d = 0.3965;
+    return (a + b * temperature - c * calc + d * temperature * calc).toPrecision(3);
   }
   
   
