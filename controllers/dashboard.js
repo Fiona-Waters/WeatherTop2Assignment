@@ -25,6 +25,8 @@ const dashboard = {
       station.beaufort = analytics.convertToBeaufort(windSpeed);
       let code = lastReading.code;
       station.weatherCondition = analytics.fillWeatherCodes(code);
+      let windDirection = lastReading.windDirection;
+      station.windCompass = analytics.calcWindDirection(windDirection);
         
       }
     }
