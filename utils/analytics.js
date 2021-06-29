@@ -44,7 +44,54 @@ weatherCodes.set(600, "Rain")
 weatherCodes.set(700, "Snow")
 weatherCodes.set(800, "Thunder")
    return weatherCodes.get(code);
- }
+ },
+  
+  calcWindDirection: function(windDirection) {
+    let compass = undefined;
+    if (((windDirection >= 348.75) && (windDirection <= 360)) || (windDirection <= 11.25)) {
+      compass = "North";
+    } else if ((windDirection > 11.25) && (windDirection <= 33.75)) {
+      compass = "North North East";
+    } else if ((windDirection > 33.75) && (windDirection <= 56.25)) {
+      compass = "North East";
+    } else if ((windDirection > 56.25) && (windDirection <= 78.75)) {
+      compass = "East North East";
+    } else if ((windDirection > 78.75) && (windDirection <= 101.25)) {
+      compass = "East";
+    } else if ((windDirection > 101.25) && (windDirection <= 123.75)) {
+      compass = "East South East";
+    } else if ((windDirection > 123.75) && (windDirection <= 146.25)) {
+      compass = "South East";
+    } else if ((windDirection > 146.25) && (windDirection <= 168.75)) {
+      compass = "South South East";
+    } else if ((windDirection > 168.75) && (windDirection <= 191.25)) {
+      compass = "South";
+    } else if ((windDirection > 191.25) && (windDirection <= 213.75)) {
+      compass = "South South West";
+    } else if ((windDirection > 213.75) && (windDirection <= 236.25)) {
+      compass = "South West";
+    } else if ((windDirection > 236.25) && (windDirection <= 258.75)) {
+      compass = "West South West";
+    } else if ((windDirection > 258.75) && (windDirection <= 281.25)) {
+      compass = "West";
+    } else if ((windDirection > 281.25) && (windDirection <= 303.75)) {
+      compass = "West North West";
+    } else if ((windDirection > 303.75) && (windDirection <= 326.25)) {
+      compass = "North West";
+    } else if ((windDirection > 326.25) && (windDirection <= 348.75)) {
+      compass = "North North West";
+    }
+    return compass;
+  },
+  
+   calcWindChill: function(temperature, windSpeed) {
+    let calc = Math.pow(windSpeed, 0.16);
+    let a = 13.12;
+    let b = 0.6215;
+    let c = 11.37;
+    let d = 0.3965;
+    return (a + b * temperature - c * calc + d * temperature * calc).toPrecision(3);
+  }
   
   
 }

@@ -1,38 +1,10 @@
 {{> menu id="dashboard"}}
 
 {{#each stations}}
-  <section class="ui segment">
+  <section class="ui blue segment">
     <h2 class="ui header">
       {{name}}
     </h2>
-    {{> weathercards}}
-    <table class="ui table">
-      <thead>
-        <tr>
-          <th>Code</th>
-          <th>Temperature</th>
-          <th>Wind Speed</th>
-          <th>Pressure</th>
-        </tr>
-      </thead>
-      <tbody>
-        {{#each readings}}
-          <tr>
-            <td>
-              {{code}}
-            </td>
-            <td>
-              {{temperature}}
-            </td>
-            <td>
-              {{windSpeed}}
-            </td>
-            <td>
-              {{pressure}}
-            </td>
-          </tr>
-        {{/each}}
-      </tbody>
-    </table>
+    <a href="/station/{{id}}" class="ui icon button"> <i class="blue icon folder open"></i> </a>
   </section>
 {{/each}}

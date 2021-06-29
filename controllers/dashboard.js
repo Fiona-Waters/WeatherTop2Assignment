@@ -1,7 +1,8 @@
 "use strict";
 
 const logger = require("../utils/logger");
-const stationList = require("../models/station-store.js");
+const stationStore = require("../models/station-store.js");
+const stationList = require('../models/station-store.js');
 const analytics = require("../utils/analytics.js");
 
 
@@ -25,15 +26,18 @@ const dashboard = {
       station.beaufort = analytics.convertToBeaufort(windSpeed);
       let code = lastReading.code;
       station.weatherCondition = analytics.fillWeatherCodes(code);
+      let windDirection = lastReading.windDirection;
+      station.windCompass = analytics.calcWindDirection(windDirection);
+      station.windChill = analytics.calcWindChill(lastReading.temperature,lastReading.windSpeed);
         
       }
     }
       
     const viewData = {
       title: "WeatherTop Dashboard",
-      stations: stationList
+      stations: stationStore.getAllStations(),
     };
-    
+    logger.info("about to render", stationStore.getAllStations());
     response.render("dashboard", viewData);
   },
 };
