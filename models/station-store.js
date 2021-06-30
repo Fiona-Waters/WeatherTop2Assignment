@@ -1,4 +1,4 @@
-
+const _ = require('lodash');
 
 'use strict';
 
@@ -11,14 +11,14 @@ const stationStore = {
   },
 
   getStation(id) {
-    let foundStation = null;
-    for (let station of this.stationList) {
-      if (id == station.id) {
-        foundStation = station;
-      }
+    return _.find(this.stationList, { id: id });
     }
 
     return foundStation;
+  },
+  removeReading(id, readingId) {
+    const station = this.getStation(id);
+    _.remove(station.readings, { id: readingId });
   },
 };
 
