@@ -1,9 +1,11 @@
 const _ = require('lodash');
+const JsonStore = require('./json-store');
 
 'use strict';
 
 const stationStore = {
-
+  
+  store: new JsonStore('./models/station-store.json', { stationList: [] }),
   stationList: require('./station-store.json').stationList,
 
   getAllStations() {
