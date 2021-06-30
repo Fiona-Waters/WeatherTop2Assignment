@@ -9,6 +9,8 @@ const station = {
   index(request, response) {
     const stationId = request.params.id;
     logger.debug("Station id = " + stationId);
+   
+    //move this section to utils and call here?
     const station = stationStore.getStation(stationId);
     
     if(station.readings.length>0){
@@ -24,9 +26,11 @@ const station = {
       station.weatherCondition = analytics.fillWeatherCodes(code);
       let windDirection = lastReading.windDirection;
       station.windCompass = analytics.calcWindDirection(windDirection);
-      station.windChill = analytics.calcWindChill(lastReading.temperature,lastReading.windSpeed);
-        
-      }
+      station.windChill = analytics.calcWindChill(lastReading.temperature,lastReading.windSpeed); 
+    }
+    
+      
+    //move this section to utils and call here?
     
     const viewData = {
       title: 'Station',
