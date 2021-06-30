@@ -12,13 +12,20 @@ const stationStore = {
 
   getStation(id) {
     return _.find(this.stationList, { id: id });
-    }
-
-    return foundStation;
-  },
+    },
+  
   removeReading(id, readingId) {
     const station = this.getStation(id);
     _.remove(station.readings, { id: readingId });
+  },
+  
+  removeStation(id) {
+    _.remove(this.stationList, { id: id });
+  },
+  
+  addReading(id, reading) {
+    const station = this.getStation(id);
+    station.readings.push(reading);
   },
 };
 
