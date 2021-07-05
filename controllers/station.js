@@ -13,7 +13,7 @@ const station = {
     //move this section to utils and call here?
     const station = stationStore.getStation(stationId);
     
-    if(station.readings.length>0){
+    if(station.readings.length>0) || (station.readings == 'undefined'){
         
       const lastReading = station.readings[station.readings.length-1];
       station.lastReading = lastReading;
@@ -28,10 +28,6 @@ const station = {
       station.windCompass = analytics.calcWindDirection(windDirection);
       station.windChill = analytics.calcWindChill(lastReading.temperature,lastReading.windSpeed); 
     }
-    else
-      {
-        
-      }
     
     //move this section to utils and call here?
     
