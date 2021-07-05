@@ -112,31 +112,30 @@ weatherCodes.set(800, "Thunder")
   
   calcMinimumTemperature: function(readings) {
     let minValue = 0;
-    if (readings.size() > 0) {
-      minValue = readings.get(0).temperature;
-     for(let i = 0; i< readings.length; i++){
+    if (readings.length > 0) {
+      minValue = readings[0].temperature;
+     for(let i = 0; i < readings.length; i++){
      if (readings[i].temperature < minValue) {
           minValue = readings[i].temperature; 
      }
-        if (readings.temperature < minValue) {
-          minValue = readings.temperature;
-        }
       }
     }
     return minValue;
+  },
+ 
+  calcMaximumTemperature: function(readings) {
+    let maxValue = 0;
+    if (readings.length > 0) {
+      maxValue = readings[0].temperature;
+      for (let i=0; i < readings.length; i++) {
+        if (readings[i].temperature > maxValue) {
+          maxValue = readings[i].temperature;
+        }
+      }
+    }
+    return maxValue;
   }
   
-  /*
-  function howMany(selectObject) {
-  let numberSelected = 0;
-  for (let i = 0; i < selectObject.options.length; i++) {
-    if (selectObject.options[i].selected) {
-      numberSelected++;
-    }
-  }
-  return numberSelected;
-}
-*/
   
 }
 
