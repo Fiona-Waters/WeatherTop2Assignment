@@ -28,10 +28,10 @@
       </div>
       <div class="extra">
           <h3>Temp <i class="right floated red big thermometer half icon"></i> </h3>
-        <p>{{station.lastReading.temperature}} C</p>
-          <p>{{station.fahrenheit}} F</p>
+        <p>{{station.lastReading.temperature}} C
+        <br>{{station.fahrenheit}} F
         <br>Min: {{station.minTemperature}}
-        
+        <br>Max: {{station.maxTemperature}} </p>
         
           <div class="ui yellow rating" data-rating="3"></div>
       </div>
@@ -46,6 +46,7 @@
         <br> {{station.windCompass}}
         <br> Feels like 
         <br>{{station.windChill}}
+            <br> {{station.minWindSpeed}}
         </p>
           <div class="ui yellow rating" data-rating="4"></div>
       </div>

@@ -134,7 +134,20 @@ weatherCodes.set(800, "Thunder")
       }
     }
     return maxValue;
-  }
+  },
+  
+  calcMinimumWindSpeed: function(readings){
+    let minValue = 0;
+    if(readings.length > 0){
+      minValue = readings[0].windSpeed;
+      for(let i = 0; i < readings.length; i++){
+        if(readings[i].windSpeed < minValue){
+          minValue = readings[i].windSpeed;
+        }
+      }
+    }
+    return minValue;
+  },
   
   
 }
