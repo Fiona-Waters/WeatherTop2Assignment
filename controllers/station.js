@@ -29,7 +29,6 @@ const station = {
       station.windChill = analytics.calcWindChill(lastReading.temperature,lastReading.windSpeed); 
     }
     
-      
     //move this section to utils and call here?
     
     const viewData = {
