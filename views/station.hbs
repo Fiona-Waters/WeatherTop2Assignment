@@ -4,13 +4,7 @@
   {{> weathercards}}
   <h2 class="ui header">
     {{station.name}}
-  </h2>
-  {{#if station.readings}}
+  </h2> 
   {{> listreadings}}
-  {{else}}
-  <h2>
-    No readings yet
-  </h2>
-  {{/if}}
 </section>
 {{> addreading}}

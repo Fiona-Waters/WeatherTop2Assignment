@@ -96,31 +96,7 @@ weatherCodes.set(800, "Thunder")
     return (a + b * temperature - c * calc + d * temperature * calc).toPrecision(3);
   },
   
-  /*
-  readingCalculations: function(stationId){
-  const station = stationStore.getStation(stationId);
-    
-    if(station.readings.length>0){
-        
-      const lastReading = station.readings[station.readings.length-1];
-      station.lastReading = lastReading;
-           
-      let celsius = lastReading.temperature;
-      station.fahrenheit = analytics.convertCToF(celsius);
-      let windSpeed = lastReading.windSpeed;
-      station.beaufort = analytics.convertToBeaufort(windSpeed);
-      let code = lastReading.code;
-      station.weatherCondition = analytics.fillWeatherCodes(code);
-      let windDirection = lastReading.windDirection;
-      station.windCompass = analytics.calcWindDirection(windDirection);
-      station.windChill = analytics.calcWindChill(lastReading.temperature,lastReading.windSpeed); 
-    }
-  }*/
-  
 }
-
-
-
 
 
 module.exports = analytics;
