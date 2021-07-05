@@ -13,7 +13,7 @@ const station = {
     //move this section to utils and call here?
     const station = stationStore.getStation(stationId);
     
-    if(station.readings.length>0) || (station.readings == 'undefined'){
+    if(station.readings.length>0) {
         
       const lastReading = station.readings[station.readings.length-1];
       station.lastReading = lastReading;
