@@ -17,7 +17,7 @@
             <img>
         </div>
         <div class="extra">
-            <h3>Weather</h3>
+            <h3>Weather<i class="right floated red big {{station.weatherConditionIcon}}"></i></h3>
             <p>{{station.weatherCondition}} </p>
           <div class="ui yellow rating" data-rating="2"></div>
       </div>
@@ -27,7 +27,7 @@
           <img>
       </div>
       <div class="extra">
-          <h3>Temp</h3>
+          <h3>Temp <i class="right floated red big thermometer half icon"></i> </h3>
         <p>{{station.lastReading.temperature}} C</p>
           <p>{{station.fahrenheit}} F</p>
           <div class="ui yellow rating" data-rating="3"></div>
@@ -38,7 +38,7 @@
           <img>
       </div>
       <div class="extra">
-          <h3>Wind</h3>
+          <h3>Wind <i class="right floated green big wind icon"></i> </h3>
           <p>{{station.beaufort}} bft
         <br> {{station.windCompass}}
         <br> Feels like 
@@ -52,7 +52,7 @@
           <img>
       </div>
       <div class="extra">
-          <h3>Pressure</h3>
+          <h3>Pressure <i class="right floated orange big compress arrows alternate icon"></i> </h3>
           <p>{{station.lastReading.pressure}} hpa</p>
           <div class="ui yellow rating" data-rating="5"></div>
       </div>
