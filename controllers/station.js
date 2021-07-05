@@ -28,7 +28,7 @@ const station = {
       let windDirection = lastReading.windDirection;
       station.windCompass = analytics.calcWindDirection(windDirection);
       station.windChill = analytics.calcWindChill(lastReading.temperature,lastReading.windSpeed); 
-      
+      station.minTemperature = analytics.calcMinimumTemperature(station.readings);
     }
     
     //move this section to utils and call here//

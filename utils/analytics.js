@@ -109,21 +109,34 @@ weatherCodes.set(800, "Thunder")
     return (a + b * temperature - c * calc + d * temperature * calc).toPrecision(3);
   },
   
-  /*
-  calcMinimumTemperature(readings) {
+  
+  calcMinimumTemperature: function(readings) {
     let minValue = 0;
     if (readings.size() > 0) {
       minValue = readings.get(0).temperature;
-     // loop through readings here
-        if (reading.temperature < minValue) {
-          minValue = reading.temperature;
+     for(let i = 0; i< readings.length; i++){
+     if (readings[i].temperature < minValue) {
+          minValue = readings[i].temperature; 
+     }
+        if (readings.temperature < minValue) {
+          minValue = readings.temperature;
         }
       }
     }
     return minValue;
   }
-  */
   
+  /*
+  function howMany(selectObject) {
+  let numberSelected = 0;
+  for (let i = 0; i < selectObject.options.length; i++) {
+    if (selectObject.options[i].selected) {
+      numberSelected++;
+    }
+  }
+  return numberSelected;
+}
+*/
   
 }
 
