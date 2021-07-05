@@ -9,6 +9,7 @@ const station = {
   index(request, response) {
     const stationId = request.params.id;
     logger.debug("Station id = " + stationId);
+    
    
     //move this section to utils and call here?
     const station = stationStore.getStation(stationId);
@@ -33,7 +34,7 @@ const station = {
     
     const viewData = {
       title: 'Station',
-      station: station,
+      station: stationStore.getStation(stationId)
     };
     response.render('station', viewData);
   },

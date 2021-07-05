@@ -23,6 +23,7 @@ const dashboard = {
     const newStation = {
       id: uuid.v1(),
       name: request.body.name,
+      readings: [],
     };
     stationStore.addStation(newStation);
     response.redirect('/dashboard');
