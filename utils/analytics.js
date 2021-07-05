@@ -1,5 +1,7 @@
 'use strict';
 
+const stationStore = require('../models/station-store.js');
+
 const analytics = {
   
   convertCToF: function(celsius) {
@@ -92,13 +94,9 @@ weatherCodes.set(800, "Thunder")
     let c = 11.37;
     let d = 0.3965;
     return (a + b * temperature - c * calc + d * temperature * calc).toPrecision(3);
-  }
-  
+  },
   
 }
-
-
-
 
 
 module.exports = analytics;
