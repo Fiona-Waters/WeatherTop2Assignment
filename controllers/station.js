@@ -12,7 +12,24 @@ const station = {
    
     //move this section to utils and call here?
     const station = stationStore.getStation(stationId);
-    analytics.readingCalculations(station);
+    
+    if(station.readings.length>0){
+        
+      const lastReading = station.readings[station.readings.length-1];
+      station.lastReading = lastReading;
+           
+      let celsius = lastReading.temperature;
+      station.fahrenheit = analytics.convertCToF(celsius);
+      let windSpeed = lastReading.windSpeed;
+      station.beaufort = analytics.convertToBeaufort(windSpeed);
+      let code = lastReading.code;
+      station.weatherCondition = analytics.fillWeatherCodes(code);
+      let windDirection = lastReading.windDirection;
+      station.windCompass = analytics.calcWindDirection(windDirection);
+      station.windChill = analytics.calcWindChill(lastReading.temperature,lastReading.windSpeed); 
+    }
+    
+    //move this section to utils and call here?
     
     const viewData = {
       title: 'Station',

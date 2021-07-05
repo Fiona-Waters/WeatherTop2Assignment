@@ -96,6 +96,7 @@ weatherCodes.set(800, "Thunder")
     return (a + b * temperature - c * calc + d * temperature * calc).toPrecision(3);
   },
   
+  /*
   readingCalculations: function(stationId){
   const station = stationStore.getStation(stationId);
     
@@ -114,7 +115,7 @@ weatherCodes.set(800, "Thunder")
       station.windCompass = analytics.calcWindDirection(windDirection);
       station.windChill = analytics.calcWindChill(lastReading.temperature,lastReading.windSpeed); 
     }
-  }
+  }*/
   
 }
 
