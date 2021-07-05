@@ -5,7 +5,10 @@
             <img>
         </div>
         <div class="extra">
-         <h3>  {{station.name}} </h3>
+         <h3>  {{station.name}} <i class="right floated purple big map marker icon"></i> </h3>
+          <p><br> Lat: {{station.lat}}
+                <br> Lng: {{station.lng}}
+            </p>
             <div class="ui yellow rating" data-rating="1"></div>
         </div>
     </div>
@@ -25,7 +28,7 @@
       </div>
       <div class="extra">
           <h3>Temp</h3>
-        <p>{{station.lastReading?.temperature}} C</p>
+        <p>{{station.lastReading.temperature}} C</p>
           <p>{{station.fahrenheit}} F</p>
           <div class="ui yellow rating" data-rating="3"></div>
       </div>
@@ -50,7 +53,7 @@
       </div>
       <div class="extra">
           <h3>Pressure</h3>
-          <p>{{station.lastReading?.pressure}} hpa</p>
+          <p>{{station.lastReading.pressure}} hpa</p>
           <div class="ui yellow rating" data-rating="5"></div>
       </div>
   </div>

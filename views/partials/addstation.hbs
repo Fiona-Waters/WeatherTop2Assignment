@@ -1,9 +1,20 @@
+
 <form class="ui segment form" action="/dashboard/addstation" method="POST">
-    
+    <div class="three fields">
         <div class="field">
             <label><h4>Station Name</h4></label>
             <input placeholder="Station Name" type="text" pattern="[A-Za-z]{1,20}" name="name" required>
         </div>
-    
+        <div class="field">
+            <label><h4>Latitude</h4></label>
+            <input placeholder="00.00" type="number" step="0.0000001" maxlength="10" min=-90.0000000" max="90.0000000"
+                   name="lat" required>
+        </div>
+        <div class="field">
+            <label><h4>Longitude</h4></label>
+            <input placeholder="00.00" type="number" step="0.0000001" maxlength="10" min=-180.0000000" max="180.0000000"
+                   name="lng" required>
+        </div>
+    </div>
     <button class="ui submit button">Add Station</button>
 </form>

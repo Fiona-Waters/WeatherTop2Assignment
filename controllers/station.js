@@ -24,9 +24,11 @@ const station = {
       station.beaufort = analytics.convertToBeaufort(windSpeed);
       let code = lastReading.code;
       station.weatherCondition = analytics.fillWeatherCodes(code);
+      station.weatherConditionIcon = analytics.fillIconWeatherCodes(code);
       let windDirection = lastReading.windDirection;
       station.windCompass = analytics.calcWindDirection(windDirection);
       station.windChill = analytics.calcWindChill(lastReading.temperature,lastReading.windSpeed); 
+      
     }
     
     //move this section to utils and call here//

@@ -23,6 +23,8 @@ const dashboard = {
     const newStation = {
       id: uuid.v1(),
       name: request.body.name,
+      lat: request.body.lat,
+      lng: request.body.lng,
       readings: [],
     };
     stationStore.addStation(newStation);
