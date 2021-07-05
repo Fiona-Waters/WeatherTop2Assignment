@@ -9,7 +9,9 @@ const station = {
   index(request, response) {
     const stationId = request.params.id;
     logger.debug("Station id = " + stationId);
-   
+    
+   const station1 = stationStore.getStation(stationId);
+    const latestReadings = analytics.readingCalculation(station1);
   /*  //move this section to utils and call here?
     const station = stationStore.getStation(stationId);
     

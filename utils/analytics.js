@@ -2,7 +2,7 @@
 
 const analytics = {
   
-  readingCalculation: function(){
+  readingCalculation: function(station1){
   const station = station.stationStore.getStation(station.stationId);
     
     if(station.readings.length>0){
