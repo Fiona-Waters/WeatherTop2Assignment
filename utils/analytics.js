@@ -109,7 +109,7 @@ weatherCodes.set(800, "Thunder")
     return (a + b * temperature - c * calc + d * temperature * calc).toPrecision(3);
   },
   
-  
+  /*
   calcMinimumTemperature(readings) {
     let minValue = 0;
     if (readings.size() > 0) {
@@ -122,6 +122,7 @@ weatherCodes.set(800, "Thunder")
     }
     return minValue;
   }
+  */
   
   
 }
