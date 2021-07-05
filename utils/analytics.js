@@ -149,6 +149,45 @@ weatherCodes.set(800, "Thunder")
     return minValue;
   },
   
+  calcMaximumWindSpeed: function(readings) {
+    let maxValue = 0;
+    if (readings.length > 0) {
+      maxValue = readings[0].windSpeed;
+      for (let i=0; i < readings.length; i++) {
+        if (readings[i].windSpeed > maxValue) {
+          maxValue = readings[i].windSpeed;
+        }
+      }
+    }
+    return maxValue;
+  },
+  
+    calcMinimumPressure: function(readings){
+    let minValue = 0;
+    if(readings.length > 0){
+      minValue = readings[0].pressure;
+      for(let i = 0; i < readings.length; i++){
+        if(readings[i].pressure < minValue){
+          minValue = readings[i].pressure;
+        }
+      }
+    }
+    return minValue;
+  },
+  
+  calcMaximumPressure: function(readings) {
+    let maxValue = 0;
+    if (readings.length > 0) {
+      maxValue = readings[0].pressure;
+      for (let i=0; i < readings.length; i++) {
+        if (readings[i].pressure > maxValue) {
+          maxValue = readings[i].pressure;
+        }
+      }
+    }
+    return maxValue;
+  },
+  
   
 }
 
