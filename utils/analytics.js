@@ -49,6 +49,19 @@ weatherCodes.set(800, "Thunder")
    return weatherCodes.get(code);
  },
   
+  fillIconWeatherCodes: function(code){
+    let iconWeatherCodes = new Map()
+    iconWeatherCodes.set(100, "yellow sun icon")
+    iconWeatherCodes.set(200, "yellow cloud sun icon")
+    iconWeatherCodes.set(300, "yellow cloud icon")
+    iconWeatherCodes.set(400, "blue cloud rain icon")
+    iconWeatherCodes.set(500, "grey cloud showers heavy icon")
+    iconWeatherCodes.set(600, "grey cloud rain icon")
+    iconWeatherCodes.set(700, "pink snowman icon")
+    iconWeatherCodes.set(800, "yellow bolt icon")
+    return iconWeatherCodes.get(code);
+  },
+  
   calcWindDirection: function(windDirection) {
     let compass = undefined;
     if (((windDirection >= 348.75) && (windDirection <= 360)) || (windDirection <= 11.25)) {
@@ -95,6 +108,86 @@ weatherCodes.set(800, "Thunder")
     let d = 0.3965;
     return (a + b * temperature - c * calc + d * temperature * calc).toPrecision(3);
   },
+  
+  
+  calcMinimumTemperature: function(readings) {
+    let minValue = 0;
+    if (readings.length > 0) {
+      minValue = readings[0].temperature;
+     for(let i = 0; i < readings.length; i++){
+     if (readings[i].temperature < minValue) {
+          minValue = readings[i].temperature; 
+     }
+      }
+    }
+    return minValue;
+  },
+ 
+  calcMaximumTemperature: function(readings) {
+    let maxValue = 0;
+    if (readings.length > 0) {
+      maxValue = readings[0].temperature;
+      for (let i=0; i < readings.length; i++) {
+        if (readings[i].temperature > maxValue) {
+          maxValue = readings[i].temperature;
+        }
+      }
+    }
+    return maxValue;
+  },
+  
+  calcMinimumWindSpeed: function(readings){
+    let minValue = 0;
+    if(readings.length > 0){
+      minValue = readings[0].windSpeed;
+      for(let i = 0; i < readings.length; i++){
+        if(readings[i].windSpeed < minValue){
+          minValue = readings[i].windSpeed;
+        }
+      }
+    }
+    return minValue;
+  },
+  
+  calcMaximumWindSpeed: function(readings) {
+    let maxValue = 0;
+    if (readings.length > 0) {
+      maxValue = readings[0].windSpeed;
+      for (let i=0; i < readings.length; i++) {
+        if (readings[i].windSpeed > maxValue) {
+          maxValue = readings[i].windSpeed;
+        }
+      }
+    }
+    return maxValue;
+  },
+  
+    calcMinimumPressure: function(readings){
+    let minValue = 0;
+    if(readings.length > 0){
+      minValue = readings[0].pressure;
+      for(let i = 0; i < readings.length; i++){
+        if(readings[i].pressure < minValue){
+          minValue = readings[i].pressure;
+        }
+      }
+    }
+    return minValue;
+  },
+  
+  calcMaximumPressure: function(readings) {
+    let maxValue = 0;
+    if (readings.length > 0) {
+      maxValue = readings[0].pressure;
+      for (let i=0; i < readings.length; i++) {
+        if (readings[i].pressure > maxValue) {
+          maxValue = readings[i].pressure;
+        }
+      }
+    }
+    return maxValue;
+  },
+  
   
 }
 

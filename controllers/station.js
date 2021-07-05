@@ -24,9 +24,16 @@ const station = {
       station.beaufort = analytics.convertToBeaufort(windSpeed);
       let code = lastReading.code;
       station.weatherCondition = analytics.fillWeatherCodes(code);
+      station.weatherConditionIcon = analytics.fillIconWeatherCodes(code);
       let windDirection = lastReading.windDirection;
       station.windCompass = analytics.calcWindDirection(windDirection);
       station.windChill = analytics.calcWindChill(lastReading.temperature,lastReading.windSpeed); 
+      station.minTemperature = analytics.calcMinimumTemperature(station.readings);
+      station.maxTemperature = analytics.calcMaximumTemperature(station.readings);
+      station.minWindSpeed = analytics.calcMinimumWindSpeed(station.readings);
+      station.maxWindSpeed = analytics.calcMaximumWindSpeed(station.readings);
+      station.minPressure = analytics.calcMinimumPressure(station.readings);
+      station.maxPressure = analytics.calcMaximumPressure(station.readings);
     }
     
     //move this section to utils and call here//
