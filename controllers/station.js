@@ -10,7 +10,7 @@ const station = {
     const stationId = request.params.id;
     logger.debug("Station id = " + stationId);
    
-    //move this section to utils and call here?
+  /*  //move this section to utils and call here?
     const station = stationStore.getStation(stationId);
     
     if(station.readings.length>0){
@@ -31,6 +31,7 @@ const station = {
     
       
     //move this section to utils and call here?
+    */
     
     const viewData = {
       title: 'Station',
