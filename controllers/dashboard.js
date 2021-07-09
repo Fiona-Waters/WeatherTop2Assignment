@@ -11,19 +11,20 @@ const accounts = require ('./accounts.js');
 const dashboard = {
   index(request, response) {
     logger.info("dashboard rendering");
-      
+    const loggedInUser = accounts.getCurrentUser(request);
     const viewData = {
       title: "WeatherTop Dashboard",
-      stations: stationStore.getAllStations(),
+      stations: stationStore.getUserStations(loggedInUser.id),
     };
     logger.info("about to render", stationStore.getAllStations());
     response.render("dashboard", viewData);
   },
   
   addStation(request, response) {
-    const loggedInUser = accounts
+    const loggedInUser = accounts.getCurrentUser(request);
     const newStation = {
       id: uuid.v1(),
+      userid: loggedInUser.id,
       name: request.body.name,
       lat: request.body.lat,
       lng: request.body.lng,
