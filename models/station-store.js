@@ -33,6 +33,9 @@ const stationStore = {
   addStation(station) {
   this.stationList.push(station);
 },
+  getUserStations(userid) {
+    return this.store.findBy(this.collection, { userid: userid });
+  },
 };
 
 module.exports = stationStore;

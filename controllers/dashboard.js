@@ -5,6 +5,7 @@ const stationStore = require("../models/station-store.js");
 const stationList = require('../models/station-store.js');
 const analytics = require("../utils/analytics.js");
 const uuid = require('uuid');
+const accounts = require ('./accounts.js');
 
 
 const dashboard = {
@@ -20,6 +21,7 @@ const dashboard = {
   },
   
   addStation(request, response) {
+    const loggedInUser = accounts
     const newStation = {
       id: uuid.v1(),
       name: request.body.name,
