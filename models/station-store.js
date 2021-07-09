@@ -10,20 +10,21 @@ const stationStore = {
   collection: "StationList",
 
   getAllStations() {
-    return this.stationList;
+    return this.store.findAll(this.collection);
   },
 
   getStation(id) {
-    return _.find(this.stationList, { id: id });
-    },
+return this.store.findOneBy(this.collection, { id: id });    },
   
   removeReading(id, readingId) {
     const station = this.getStation(id);
     _.remove(station.readings, { id: readingId });
   },
   
-  removeStation(id) {
-    _.remove(this.stationList, { id: id });
+ removeStation(id) {
+    const station = this.getStation(id);
+    this.store.remove(this.collection, station);
+    this.store.save();
   },
   
   addReading(id, reading) {
@@ -31,9 +32,11 @@ const stationStore = {
     station.readings.push(reading);
   },
   
-  addStation(station) {
-  this.stationList.push(station);
-},
+   addStation(station) {
+    this.store.add(this.collection, station);
+    this.store.save();
+  },
+  
   getUserStations(userid) {
     return this.store.findBy(this.collection, { userid: userid });
   },
