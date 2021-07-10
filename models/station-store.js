@@ -1,38 +1,49 @@
 const _ = require('lodash');
 const JsonStore = require('./json-store');
+const logger = require("../utils/logger");
 
 'use strict';
 
 const stationStore = {
   
   store: new JsonStore('./models/station-store.json', { stationList: [] }),
-  stationList: require('./station-store.json').stationList,
+  collection: "stationList",
+  //collection: require('./station-store.json').stationList,
 
   getAllStations() {
-    return this.stationList;
+    return this.store.findAll(this.collection);
   },
 
   getStation(id) {
-    return _.find(this.stationList, { id: id });
-    },
+    return this.store.findOneBy(this.collection, { id: id });
+  },
   
   removeReading(id, readingId) {
     const station = this.getStation(id);
-    _.remove(station.readings, { id: readingId });
+    const readings = station.readings;
+    _.remove(readings, { id: readingId });
+    this.store.save();
   },
-  
+
   removeStation(id) {
-    _.remove(this.stationList, { id: id });
+    const station = this.getStation(id);
+    this.store.remove(this.collection, station);
+    this.store.save();
   },
   
   addReading(id, reading) {
     const station = this.getStation(id);
     station.readings.push(reading);
   },
-  
+
   addStation(station) {
-  this.stationList.push(station);
-},
+    this.store.add(this.collection, station);
+    this.store.save();
+  },
+  
+  getUserStations(userid){
+    return this.store.findBy(this.collection, {userid: userid});
+  },
 };
 
 module.exports = stationStore;

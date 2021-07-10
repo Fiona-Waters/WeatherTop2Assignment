@@ -1,60 +1,49 @@
 {
   "stationList": [
     {
-      "id"  :  "01",
-      "name": "Tramore",
-      "lat": 52.160,
-      "lng": -7.152,
-      "readings":  [
+      "id": "74b14e10-e1b1-11eb-baf1-9b99a88b5008",
+      "userid": "3ad52697-6d98-4d80-8273-084de55a86c0",
+      "name": "Faithlegg",
+      "lat": "1",
+      "lng": "2",
+      "readings": [
         {
-          "id"  :  "02",
-          "code":  800,
-          "temperature": 0.5,
-          "windSpeed": 3.5,
-          "pressure": 1002,
-          "windDirection": 90
-        },
-        {
-          "id"  :  "03",
-          "code":  600,
-          "temperature": 6,
-          "windSpeed": 2,
-          "pressure": 1004,
-          "windDirection": 96
-        },
-        {
-          "id"  :  "04",
-          "code":  700,
-          "temperature": 8,
-          "windSpeed": 1,
-          "pressure": 1005,
-          "windDirection": 101
+          "id": "80b6d9a0-e1b1-11eb-baf1-9b99a88b5008",
+          "code": 100,
+          "temperature": 12,
+          "windSpeed": 123,
+          "windDirection": 123,
+          "pressure": 1001
         }
-      ]
+      ],
+      "lastReading": {
+        "id": "80b6d9a0-e1b1-11eb-baf1-9b99a88b5008",
+        "code": 100,
+        "temperature": 12,
+        "windSpeed": 123,
+        "windDirection": 123,
+        "pressure": 1001
+      },
+      "fahrenheit": 53.6,
+      "beaufort": 0,
+      "weatherCondition": "Clear",
+      "weatherConditionIcon": "yellow sun icon",
+      "windCompass": "East South East",
+      "windChill": "6.30",
+      "minTemperature": 12,
+      "maxTemperature": 12,
+      "minWindSpeed": 123,
+      "maxWindSpeed": 123,
+      "minPressure": 1001,
+      "maxPressure": 1001
     },
     {
-      "id"  :  "05",
-      "name": "Dunmore",
-      "lat": 52.149,
-      "lng": -6.994,
-      "readings":  [
-        {
-          "id"  :  "06",
-          "code":  700,
-          "temperature": 8,
-          "windSpeed": 1,
-          "pressure": 999,
-          "windDirection": 98
-        },
-        {
-          "id"  :  "07",
-          "code":  200,
-          "temperature": 0.5,
-          "windSpeed": 3.5,
-          "pressure": 1000,
-          "windDirection": 102
-        }
-      ]
+      "id": "89b00f90-e1b1-11eb-baf1-9b99a88b5008",
+      "userid": "3ad52697-6d98-4d80-8273-084de55a86c0",
+      "name": "Dublin",
+      "lat": "54",
+      "lng": "34",
+      "readings": []
     }
   ]
 }
