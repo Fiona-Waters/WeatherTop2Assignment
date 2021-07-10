@@ -5,21 +5,23 @@ const stationStore = require("../models/station-store.js");
 const stationList = require('../models/station-store.js');
 const analytics = require("../utils/analytics.js");
 const uuid = require('uuid');
-const accounts = require ('./accounts.js');
+const accounts = require('./accounts.js');
 
 
 const dashboard = {
   index(request, response) {
     logger.info("dashboard rendering");
     const loggedInUser = accounts.getCurrentUser(request);
+    const userStations = stationStore.getUserStations(loggedInUser.id);
+
     const viewData = {
       title: "WeatherTop Dashboard",
-      stations: stationStore.getUserStations(loggedInUser.id),
+      stations: userStations,
     };
-    logger.info("about to render", stationStore.getAllStations());
+    logger.info("about to render", viewData.stations);
     response.render("dashboard", viewData);
   },
-  
+
   addStation(request, response) {
     const loggedInUser = accounts.getCurrentUser(request);
     const newStation = {
@@ -30,13 +32,14 @@ const dashboard = {
       lng: request.body.lng,
       readings: [],
     };
+    logger.debug('Creating a new Station', newStation);
     stationStore.addStation(newStation);
     response.redirect('/dashboard');
   },
   
   deleteStation(request, response) {
     const stationId = request.params.id;
-    logger.debug(`Deleting Station ${stationId}`);
+    logger.info(`Deleting Station ${stationId}`);
     stationStore.removeStation(stationId);
     response.redirect('/dashboard');
   },
