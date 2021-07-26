@@ -3,6 +3,34 @@
 const stationStore = require('../models/station-store.js');
 
 const analytics = {
+
+    readingCalculations(station){
+
+        if(station.readings.length > 0) {
+            const lastReading = station.readings[station.readings.length-1];
+            station.lastReading = lastReading;
+
+            let celsius = lastReading.temperature;
+            station.fahrenheit = analytics.convertCToF(celsius);
+            let windSpeed = lastReading.windSpeed;
+            station.beaufort = analytics.convertToBeaufort(windSpeed);
+            let code = lastReading.code;
+            station.weatherCondition = analytics.fillWeatherCodes(code);
+            station.weatherConditionIcon = analytics.fillIconWeatherCodes(code);
+            let windDirection = lastReading.windDirection;
+            station.windCompass = analytics.calcWindDirection(windDirection);
+            station.windChill = analytics.calcWindChill(lastReading.temperature,lastReading.windSpeed);
+            station.minTemperature = analytics.calcMinimumTemperature(station.readings);
+            station.maxTemperature = analytics.calcMaximumTemperature(station.readings);
+            station.minWindSpeed = analytics.calcMinimumWindSpeed(station.readings);
+            station.maxWindSpeed = analytics.calcMaximumWindSpeed(station.readings);
+            station.minPressure = analytics.calcMinimumPressure(station.readings);
+            station.maxPressure = analytics.calcMaximumPressure(station.readings);
+            station.tempTrend = analytics.tempTrend(station.readings);
+            station.windSpeedTrend = analytics.windSpeedTrend(station.readings);
+            station.pressureTrend = analytics.pressureTrend(station.readings);
+        }
+    },
   
   convertCToF: function(celsius) {
     return celsius * 9/5 + 32;
@@ -108,20 +136,46 @@ weatherCodes.set(800, "Thunder")
     let d = 0.3965;
     return (a + b * temperature - c * calc + d * temperature * calc).toPrecision(3);
   },
-  
-  
-  calcMinimumTemperature: function(readings) {
-    let minValue = 0;
-    if (readings.length > 0) {
-      minValue = readings[0].temperature;
-     for(let i = 0; i < readings.length; i++){
-     if (readings[i].temperature < minValue) {
-          minValue = readings[i].temperature; 
-     }
+ /*
+  calcMin(readings){
+      let minValue = 0;
+      if(readings.length >0){
+          minValue = readings[0];
+          for(let i = 0; i < readings.length; i++){
+              if(readings[i] < minValue){
+                  minValue = readings[i];
+              }
+          }
       }
-    }
-    return minValue;
+      return minValue;
   },
+
+    calcMax(readings){
+        let maxValue = 0;
+        if(readings.length > 0){
+            maxValue = readings[0];
+            for(let i = 0; i< readings.length; i++){
+                if(readings[i] > maxValue){
+                    maxValue = readings[i];
+                }
+            }
+        }
+        return maxValue;
+    },
+
+  */
+    calcMinimumTemperature: function(readings) {
+        let minValue = 0;
+        if (readings.length > 0) {
+            minValue = readings[0].temperature;
+            for(let i = 0; i < readings.length; i++){
+                if (readings[i].temperature < minValue) {
+                    minValue = readings[i].temperature;
+                }
+            }
+        }
+        return minValue;
+    },
  
   calcMaximumTemperature: function(readings) {
     let maxValue = 0;
@@ -187,8 +241,61 @@ weatherCodes.set(800, "Thunder")
     }
     return maxValue;
   },
-  
-  
+
+
+  tempTrend: function(readings) {
+  let result = "";
+  if (readings.length >= 3) {
+    let lastReading = readings[readings.length -1].temperature;
+    let secondLastReading = readings[readings.length -2].temperature;
+    let thirdLastReading = readings[readings.length -3].temperature;
+
+    if ((lastReading > secondLastReading) && (secondLastReading > thirdLastReading)) {
+      result = "arrow up";
+    } else if ((lastReading < secondLastReading) && (secondLastReading < thirdLastReading)) {
+      result = "arrow down";
+    } else {
+      result = "Steady";
+    }
+  }
+  return result;
+},
+
+    windSpeedTrend: function(readings) {
+        let result = "";
+        if (readings.length >= 3) {
+            let lastReading = readings[readings.length -1].windSpeed;
+            let secondLastReading = readings[readings.length -2].windSpeed;
+            let thirdLastReading = readings[readings.length -3].windSpeed;
+
+            if ((lastReading > secondLastReading) && (secondLastReading > thirdLastReading)) {
+                result = "arrow up";
+            } else if ((lastReading < secondLastReading) && (secondLastReading < thirdLastReading)) {
+                result = "arrow down";
+            } else {
+                result = "Steady";
+            }
+        }
+        return result;
+    },
+    pressureTrend: function(readings) {
+        let result = "";
+        if (readings.length >= 3) {
+            let lastReading = readings[readings.length -1].pressure;
+            let secondLastReading = readings[readings.length -2].pressure;
+            let thirdLastReading = readings[readings.length -3].pressure;
+
+            if ((lastReading > secondLastReading) && (secondLastReading > thirdLastReading)) {
+                result = "arrow up";
+            } else if ((lastReading < secondLastReading) && (secondLastReading < thirdLastReading)) {
+                result = "arrow down";
+            } else {
+                result = "Steady";
+            }
+        }
+        return result;
+    },
+
 }
 
 

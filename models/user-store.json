@@ -13,6 +13,20 @@
       "email": "marge@simpson.com",
       "password": "secret",
       "id": "2b6f0989-7b7f-4a38-ad26-aa06b922d751"
+    },
+    {
+      "firstname": "Juno",
+      "lastname": "Willow",
+      "email": "juno@willow.com",
+      "password": "secret",
+      "id": "79b78270-e1b2-11eb-baf1-9b99a88b5008"
+    },
+    {
+      "firstname": "Fiona",
+      "lastname": "Waters",
+      "email": "fiona@simpson.com",
+      "password": "hello",
+      "id": "4ac6b130-e990-11eb-b7a9-315c12c830f5"
     }
   ]
 }

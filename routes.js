@@ -25,5 +25,7 @@ router.get('/dashboard/deletestation/:id', dashboard.deleteStation);
 router.post('/station/:id/addreading', station.addReading);
 router.post('/dashboard/addstation', dashboard.addStation);
 
+router.get('/my-account', accounts.userDetails);
+router.post('/updateuserdetails', accounts.updateUserDetails);
 
 module.exports = router;

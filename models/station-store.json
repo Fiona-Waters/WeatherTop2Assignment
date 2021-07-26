@@ -1,15 +1,15 @@
 {
   "stationList": [
     {
-      "id": "74b14e10-e1b1-11eb-baf1-9b99a88b5008",
+      "id": "3abf5540-e1b5-11eb-bc44-a18f76b29113",
       "userid": "3ad52697-6d98-4d80-8273-084de55a86c0",
       "name": "Faithlegg",
       "lat": "1",
-      "lng": "2",
+      "lng": "1",
       "readings": [
         {
-          "id": "80b6d9a0-e1b1-11eb-baf1-9b99a88b5008",
-          "code": 100,
+          "id": "39adb560-e990-11eb-b7a9-315c12c830f5",
+          "code": 200,
           "temperature": 12,
           "windSpeed": 123,
           "windDirection": 123,
@@ -17,8 +17,8 @@
         }
       ],
       "lastReading": {
-        "id": "80b6d9a0-e1b1-11eb-baf1-9b99a88b5008",
-        "code": 100,
+        "id": "39adb560-e990-11eb-b7a9-315c12c830f5",
+        "code": 200,
         "temperature": 12,
         "windSpeed": 123,
         "windDirection": 123,
@@ -26,8 +26,8 @@
       },
       "fahrenheit": 53.6,
       "beaufort": 0,
-      "weatherCondition": "Clear",
-      "weatherConditionIcon": "yellow sun icon",
+      "weatherCondition": "Partial Clouds",
+      "weatherConditionIcon": "yellow cloud sun icon",
       "windCompass": "East South East",
       "windChill": "6.30",
       "minTemperature": 12,
@@ -35,14 +35,25 @@
       "minWindSpeed": 123,
       "maxWindSpeed": 123,
       "minPressure": 1001,
-      "maxPressure": 1001
+      "maxPressure": 1001,
+      "tempTrend": "",
+      "windSpeedTrend": "",
+      "pressureTrend": ""
     },
     {
-      "id": "89b00f90-e1b1-11eb-baf1-9b99a88b5008",
+      "id": "5a665370-e990-11eb-b7a9-315c12c830f5",
+      "userid": "4ac6b130-e990-11eb-b7a9-315c12c830f5",
+      "name": "Faithlegg",
+      "lat": "12.12",
+      "lng": "12.12",
+      "readings": []
+    },
+    {
+      "id": "25db9730-ee29-11eb-9c6e-7b169d24be8e",
       "userid": "3ad52697-6d98-4d80-8273-084de55a86c0",
       "name": "Dublin",
-      "lat": "54",
-      "lng": "34",
+      "lat": "2",
+      "lng": "2",
       "readings": []
     }
   ]

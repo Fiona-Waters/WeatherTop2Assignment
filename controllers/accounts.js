@@ -42,7 +42,7 @@ const accounts = {
 
     authenticate(request, response) {
         const user = userstore.getUserByEmail(request.body.email);
-        if (user) {
+        if ((user) && (request.body.password === user.password))  {
             response.cookie('station', user.email);
             logger.info(`logging in ${user.email}`);
             response.redirect('/dashboard');
@@ -55,6 +55,22 @@ const accounts = {
         const userEmail = request.cookies.station;
         return userstore.getUserByEmail(userEmail);
     },
+
+    userDetails(request, response) {
+    let user = accounts.getCurrentUser(request);
+    response.render('my-account', user);
+},
+
+    updateUserDetails(request, response, firstname, lastname, email, password) {
+    let user = accounts.getCurrentUser(request);
+    user.firstname = firstname;
+    user.lastname = lastname;
+    user.email = email;
+    user.password = password;
+    user.save();
+
+    response.redirect('login');
+}
 };
 
 module.exports = accounts;

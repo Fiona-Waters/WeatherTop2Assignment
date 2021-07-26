@@ -7,12 +7,15 @@ const analytics = require("../utils/analytics.js");
 const uuid = require('uuid');
 const accounts = require('./accounts.js');
 
-
 const dashboard = {
   index(request, response) {
     logger.info("dashboard rendering");
     const loggedInUser = accounts.getCurrentUser(request);
     const userStations = stationStore.getUserStations(loggedInUser.id);
+    userStations.sort((a, b) => (a.name > b.name) ? 1 : -1);
+    for (let i = 0; i < userStations.length; i++) {
+        analytics.readingCalculations(userStations[i]);
+    }
 
     const viewData = {
       title: "WeatherTop Dashboard",

@@ -9,35 +9,8 @@ const station = {
   index(request, response) {
     const stationId = request.params.id;
     logger.debug("Station id = " + stationId);
-    
-    //move this section to utils and call here//
     const station = stationStore.getStation(stationId);
-    
-    if(station.readings.length>0) {
-        
-      const lastReading = station.readings[station.readings.length-1];
-      station.lastReading = lastReading;
-           
-      let celsius = lastReading.temperature;
-      station.fahrenheit = analytics.convertCToF(celsius);
-      let windSpeed = lastReading.windSpeed;
-      station.beaufort = analytics.convertToBeaufort(windSpeed);
-      let code = lastReading.code;
-      station.weatherCondition = analytics.fillWeatherCodes(code);
-      station.weatherConditionIcon = analytics.fillIconWeatherCodes(code);
-      let windDirection = lastReading.windDirection;
-      station.windCompass = analytics.calcWindDirection(windDirection);
-      station.windChill = analytics.calcWindChill(lastReading.temperature,lastReading.windSpeed); 
-      station.minTemperature = analytics.calcMinimumTemperature(station.readings);
-      station.maxTemperature = analytics.calcMaximumTemperature(station.readings);
-      station.minWindSpeed = analytics.calcMinimumWindSpeed(station.readings);
-      station.maxWindSpeed = analytics.calcMaximumWindSpeed(station.readings);
-      station.minPressure = analytics.calcMinimumPressure(station.readings);
-      station.maxPressure = analytics.calcMaximumPressure(station.readings);
-    }
-    
-    //move this section to utils and call here//
-    
+    analytics.readingCalculations(station);
     const viewData = {
       title: 'Station',
       station: stationStore.getStation(stationId)
@@ -48,6 +21,8 @@ const station = {
   addReading(request, response) {
     const stationId = request.params.id;
     const station = stationStore.getStation(stationId);
+    const currentDate = new Date();
+    const timestamp = new Date(currentDate.getTime() - (currentDate.getTimezoneOffset() * 60000)).toISOString().replace ('T', ' ').replace('Z', '');
     const newReading = {
       id: uuid.v1(),
       code: Number(request.body.code),
@@ -55,6 +30,7 @@ const station = {
       windSpeed: Number(request.body.windSpeed),
       windDirection: Number(request.body.windDirection),
       pressure: Number(request.body.pressure),
+      date: timestamp,
     };
     stationStore.addReading(stationId, newReading);
     response.redirect('/station/' + stationId);
