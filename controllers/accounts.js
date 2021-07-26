@@ -61,15 +61,14 @@ const accounts = {
     response.render('my-account', user);
 },
 
-    updateUserDetails(request, response, firstname, lastname, email, password) {
+    updateUserDetails(request, response) {
     let user = accounts.getCurrentUser(request);
-    user.firstname = firstname;
-    user.lastname = lastname;
-    user.email = email;
-    user.password = password;
-    user.save();
+    user.firstname = request.body.firstname;
+    user.lastname = request.body.lastname;
+    user.email = request.body.email;
+    user.password = request.body.password;
 
-    response.redirect('login');
+    response.render('login');
 }
 };
 
