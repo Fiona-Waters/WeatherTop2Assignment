@@ -7,6 +7,7 @@ const analytics = require("../utils/analytics.js");
 const uuid = require('uuid');
 const accounts = require('./accounts.js');
 
+
 const dashboard = {
   index(request, response) {
     logger.info("dashboard rendering");

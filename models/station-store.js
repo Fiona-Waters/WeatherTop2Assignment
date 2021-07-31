@@ -8,7 +8,6 @@ const stationStore = {
   
   store: new JsonStore('./models/station-store.json', { stationList: [] }),
   collection: "stationList",
-  //collection: require('./station-store.json').stationList,
 
   getAllStations() {
     return this.store.findAll(this.collection);
@@ -33,8 +32,10 @@ const stationStore = {
   
   addReading(id, reading) {
     const station = this.getStation(id);
-    station.readings.push(reading);
+   // if(station.readings.length > 0) 
+   { station.readings.push(reading);}
   },
+  
 
   addStation(station) {
     this.store.add(this.collection, station);

@@ -54,7 +54,90 @@
       "name": "Dublin",
       "lat": "2",
       "lng": "2",
-      "readings": []
+      "readings": [
+        {
+          "id": "1ea7f2d0-ef99-11eb-a7c7-9f7e788303a3",
+          "code": 100,
+          "temperature": 10,
+          "windSpeed": 12,
+          "windDirection": 123,
+          "pressure": 1001,
+          "date": "2021-07-28 11:44:08.808"
+        },
+        {
+          "id": "829fad00-f1fb-11eb-95c6-a198ec3a9417",
+          "code": 800,
+          "temperature": 25.83,
+          "windSpeed": 6,
+          "pressure": 1015,
+          "windDirection": 180,
+          "date": "2021-07-31 12:33:29.223"
+        }
+      ],
+      "lastReading": {
+        "id": "829fad00-f1fb-11eb-95c6-a198ec3a9417",
+        "code": 800,
+        "temperature": 25.83,
+        "windSpeed": 6,
+        "pressure": 1015,
+        "windDirection": 180,
+        "date": "2021-07-31 12:33:29.223"
+      },
+      "fahrenheit": 78.494,
+      "beaufort": 2,
+      "windCompass": "South",
+      "windChill": "27.7",
+      "minTemperature": 10,
+      "maxTemperature": 25.83,
+      "minWindSpeed": 6,
+      "maxWindSpeed": 12,
+      "minPressure": 1001,
+      "maxPressure": 1015,
+      "tempTrend": "",
+      "windSpeedTrend": "",
+      "pressureTrend": "",
+      "weatherCondition": "Thunder",
+      "weatherConditionIcon": "yellow bolt icon"
+    },
+    {
+      "id": "34b2f430-ef99-11eb-a7c7-9f7e788303a3",
+      "userid": "3ad52697-6d98-4d80-8273-084de55a86c0",
+      "name": "Dunmore",
+      "lat": "52.149",
+      "lng": "-6.994",
+      "readings": [
+        {
+          "id": "2fab4c20-f1fc-11eb-9147-b990ebd5e9c1",
+          "code": 804,
+          "temperature": 18.61,
+          "windSpeed": 2.97,
+          "pressure": 1010,
+          "windDirection": 245,
+          "date": "2021-07-31 12:38:19.421"
+        }
+      ],
+      "lastReading": {
+        "id": "2fab4c20-f1fc-11eb-9147-b990ebd5e9c1",
+        "code": 804,
+        "temperature": 18.61,
+        "windSpeed": 2.97,
+        "pressure": 1010,
+        "windDirection": 245,
+        "date": "2021-07-31 12:38:19.421"
+      },
+      "fahrenheit": 65.498,
+      "beaufort": 1,
+      "windCompass": "West South West",
+      "windChill": "19.9",
+      "minTemperature": 18.23,
+      "maxTemperature": 18.61,
+      "minWindSpeed": 1.79,
+      "maxWindSpeed": 2.97,
+      "minPressure": 1010,
+      "maxPressure": 1010,
+      "tempTrend": "",
+      "windSpeedTrend": "",
+      "pressureTrend": ""
     }
   ]
 }
