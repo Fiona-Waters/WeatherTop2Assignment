@@ -1,103 +1,12 @@
 {
   "stationList": [
     {
-      "id": "3abf5540-e1b5-11eb-bc44-a18f76b29113",
-      "userid": "3ad52697-6d98-4d80-8273-084de55a86c0",
-      "name": "Faithlegg",
-      "lat": "1",
-      "lng": "1",
-      "readings": [
-        {
-          "id": "39adb560-e990-11eb-b7a9-315c12c830f5",
-          "code": 200,
-          "temperature": 12,
-          "windSpeed": 123,
-          "windDirection": 123,
-          "pressure": 1001
-        }
-      ],
-      "lastReading": {
-        "id": "39adb560-e990-11eb-b7a9-315c12c830f5",
-        "code": 200,
-        "temperature": 12,
-        "windSpeed": 123,
-        "windDirection": 123,
-        "pressure": 1001
-      },
-      "fahrenheit": 53.6,
-      "beaufort": 0,
-      "weatherCondition": "Partial Clouds",
-      "weatherConditionIcon": "yellow cloud sun icon",
-      "windCompass": "East South East",
-      "windChill": "6.30",
-      "minTemperature": 12,
-      "maxTemperature": 12,
-      "minWindSpeed": 123,
-      "maxWindSpeed": 123,
-      "minPressure": 1001,
-      "maxPressure": 1001,
-      "tempTrend": "",
-      "windSpeedTrend": "",
-      "pressureTrend": ""
-    },
-    {
       "id": "5a665370-e990-11eb-b7a9-315c12c830f5",
       "userid": "4ac6b130-e990-11eb-b7a9-315c12c830f5",
       "name": "Faithlegg",
       "lat": "12.12",
       "lng": "12.12",
       "readings": []
-    },
-    {
-      "id": "25db9730-ee29-11eb-9c6e-7b169d24be8e",
-      "userid": "3ad52697-6d98-4d80-8273-084de55a86c0",
-      "name": "Dublin",
-      "lat": "2",
-      "lng": "2",
-      "readings": [
-        {
-          "id": "1ea7f2d0-ef99-11eb-a7c7-9f7e788303a3",
-          "code": 100,
-          "temperature": 10,
-          "windSpeed": 12,
-          "windDirection": 123,
-          "pressure": 1001,
-          "date": "2021-07-28 11:44:08.808"
-        },
-        {
-          "id": "829fad00-f1fb-11eb-95c6-a198ec3a9417",
-          "code": 800,
-          "temperature": 25.83,
-          "windSpeed": 6,
-          "pressure": 1015,
-          "windDirection": 180,
-          "date": "2021-07-31 12:33:29.223"
-        }
-      ],
-      "lastReading": {
-        "id": "829fad00-f1fb-11eb-95c6-a198ec3a9417",
-        "code": 800,
-        "temperature": 25.83,
-        "windSpeed": 6,
-        "pressure": 1015,
-        "windDirection": 180,
-        "date": "2021-07-31 12:33:29.223"
-      },
-      "fahrenheit": 78.494,
-      "beaufort": 2,
-      "windCompass": "South",
-      "windChill": "27.7",
-      "minTemperature": 10,
-      "maxTemperature": 25.83,
-      "minWindSpeed": 6,
-      "maxWindSpeed": 12,
-      "minPressure": 1001,
-      "maxPressure": 1015,
-      "tempTrend": "",
-      "windSpeedTrend": "",
-      "pressureTrend": "",
-      "weatherCondition": "Thunder",
-      "weatherConditionIcon": "yellow bolt icon"
     },
     {
       "id": "34b2f430-ef99-11eb-a7c7-9f7e788303a3",
@@ -114,30 +23,171 @@
           "pressure": 1010,
           "windDirection": 245,
           "date": "2021-07-31 12:38:19.421"
+        },
+        {
+          "id": "bd486a40-fa1c-11eb-93d1-3bdfa4992d31",
+          "code": 100,
+          "temperature": -5,
+          "windSpeed": 12,
+          "windDirection": 123,
+          "pressure": 1100,
+          "date": "2021-08-10 20:51:30.659"
         }
       ],
       "lastReading": {
-        "id": "2fab4c20-f1fc-11eb-9147-b990ebd5e9c1",
-        "code": 804,
-        "temperature": 18.61,
-        "windSpeed": 2.97,
-        "pressure": 1010,
-        "windDirection": 245,
-        "date": "2021-07-31 12:38:19.421"
+        "id": "bd486a40-fa1c-11eb-93d1-3bdfa4992d31",
+        "code": 100,
+        "temperature": -5,
+        "windSpeed": 12,
+        "windDirection": 123,
+        "pressure": 1100,
+        "date": "2021-08-10 20:51:30.659"
       },
-      "fahrenheit": 65.498,
-      "beaufort": 1,
-      "windCompass": "West South West",
-      "windChill": "19.9",
-      "minTemperature": 18.23,
+      "fahrenheit": 23,
+      "beaufort": 3,
+      "windCompass": "East South East",
+      "windChill": "-9.86",
+      "minTemperature": -5,
       "maxTemperature": 18.61,
-      "minWindSpeed": 1.79,
-      "maxWindSpeed": 2.97,
+      "minWindSpeed": 2.97,
+      "maxWindSpeed": 12,
       "minPressure": 1010,
-      "maxPressure": 1010,
+      "maxPressure": 1100,
       "tempTrend": "",
       "windSpeedTrend": "",
-      "pressureTrend": ""
+      "pressureTrend": "",
+      "windTrend": [
+        6.47,
+        9.1,
+        11.44,
+        9.91,
+        5.1,
+        6.54,
+        7.84,
+        8.04
+      ],
+      "trendLabels": [
+        "11/7/2021",
+        "12/7/2021",
+        "13/7/2021",
+        "14/7/2021",
+        "15/7/2021",
+        "16/7/2021",
+        "17/7/2021",
+        "18/7/2021"
+      ],
+      "weatherCondition": "Clear",
+      "weatherConditionIcon": "yellow sun icon",
+      "windDirectionTrend": [
+        205,
+        218,
+        223,
+        200,
+        323,
+        254,
+        349,
+        346
+      ]
+    },
+    {
+      "id": "c60a5060-f857-11eb-ae05-f96e25c864aa",
+      "userid": "3ad52697-6d98-4d80-8273-084de55a86c0",
+      "name": "Tramore",
+      "lat": "52.16",
+      "lng": "-7.152",
+      "readings": []
+    },
+    {
+      "id": "70066060-f86a-11eb-bd05-0b8b721becd0",
+      "userid": "3ad52697-6d98-4d80-8273-084de55a86c0",
+      "name": "Woodstown",
+      "lat": "52.2503",
+      "lng": "-7.1924",
+      "readings": []
+    },
+    {
+      "id": "b9d69a00-f885-11eb-b0f0-2d3f8f49c887",
+      "userid": "3ad52697-6d98-4d80-8273-084de55a86c0",
+      "name": "Dublin",
+      "lat": "53.3498",
+      "lng": "-6.2603",
+      "readings": [
+        {
+          "id": "82091250-f94e-11eb-9d62-85cf16cd33dd",
+          "code": 803,
+          "temperature": 16.84,
+          "windSpeed": 3.58,
+          "pressure": 1008,
+          "windDirection": 266,
+          "date": "2021-08-09 20:15:14.596"
+        }
+      ],
+      "tempTrend": "",
+      "windTrend": [
+        5.18,
+        3.37,
+        4.99,
+        7.75,
+        6.54,
+        3.08,
+        2.85,
+        3.52
+      ],
+      "pressureTrend": "",
+      "trendLabels": [
+        "9/7/2021",
+        "10/7/2021",
+        "11/7/2021",
+        "12/7/2021",
+        "13/7/2021",
+        "14/7/2021",
+        "15/7/2021",
+        "16/7/2021"
+      ],
+      "lastReading": {
+        "id": "82091250-f94e-11eb-9d62-85cf16cd33dd",
+        "code": 803,
+        "temperature": 16.84,
+        "windSpeed": 3.58,
+        "pressure": 1008,
+        "windDirection": 266,
+        "date": "2021-08-09 20:15:14.596"
+      },
+      "fahrenheit": 62.312,
+      "beaufort": 1,
+      "windCompass": "West",
+      "windChill": "17.8",
+      "minTemperature": 16.84,
+      "maxTemperature": 16.84,
+      "minWindSpeed": 3.58,
+      "maxWindSpeed": 3.58,
+      "minPressure": 1008,
+      "maxPressure": 1008,
+      "windSpeedTrend": ""
+    },
+    {
+      "id": "b74e8fa0-fa32-11eb-8a1f-4f09d113e3cf",
+      "userid": "ad2a2020-fa32-11eb-8a1f-4f09d113e3cf",
+      "name": "r",
+      "lat": "1",
+      "lng": "1",
+      "readings": []
+    },
+    {
+      "id": "40746f30-fa8c-11eb-a5c5-4bc44134542e",
+      "userid": "3ad52697-6d98-4d80-8273-084de55a86c0",
+      "name": "Tipperary",
+      "lat": "52.4747",
+      "lng": "-8.1544",
+      "readings": []
+    },
+    {
+      "id": "844d0cb0-fbb0-11eb-a130-9795b8786603",
+      "userid": "3ad52697-6d98-4d80-8273-084de55a86c0",
+      "name": "MizenHead",
+      "lat": "51.4522",
+      "lng": "-9.8189",
+      "readings": []
     }
   ]
 }

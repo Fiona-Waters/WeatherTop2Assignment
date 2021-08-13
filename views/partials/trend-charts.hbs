@@ -1,0 +1,61 @@
+
+<div class = "ui segment" id="chart">
+
+  <script>
+  const data = {
+    
+    labels: [
+      {{#each station.trendLabels}}
+        "{{this}}",
+      {{/each}}
+    ],
+    datasets: [
+      
+      {
+        name: "Temperature", type: "line",
+        values: [
+          {{#each station.tempTrend}}
+            {{this}},
+          {{/each}}
+        ]
+      },
+      
+      {
+        name: "Wind Speed", type: "line",
+        values: [
+          {{#each station.windSpeedTrend}}
+            {{this}},
+          {{/each}}
+        ]
+      },
+      {
+        name: "Wind Direction", type: "line",
+        values: [
+          {{#each station.windDirectionTrend}}
+            {{this}},
+          {{/each}}
+        ]
+      },
+      
+      {
+        name: "Pressure", type: "line",
+        values: [
+          {{#each station.pressureTrend}}
+            {{this}},
+          {{/each}}
+        ]
+      }
+      
+    ],
+  }
+
+  const chart = new frappe.Chart("#chart", {
+    title: "Trends",
+    data: data,
+    type: 'line',
+    height: 350,
+    colors: ["orange", "purple", "blue", "green"],
+
+  })
+</script>
+  </div>

@@ -32,7 +32,6 @@ const stationStore = {
   
   addReading(id, reading) {
     const station = this.getStation(id);
-   // if(station.readings.length > 0) 
    { station.readings.push(reading);}
   },
   

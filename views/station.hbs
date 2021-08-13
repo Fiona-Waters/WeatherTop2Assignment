@@ -3,9 +3,11 @@
 <section class="ui middle aligned segment">
   {{> weathercards}}
   <h2 class="ui header">
-    {{station.name}}
   </h2> 
-  {{> listreadings}}
 </section>
+
+{{> trend-charts}}
+{{> listreadings}}
 {{> addreading}}
 {{> autogenerate-reading}}
+

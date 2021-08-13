@@ -5,7 +5,10 @@
       "lastName": "simpson",
       "email": "homer@simpson.com",
       "password": "secret",
-      "id": "3ad52697-6d98-4d80-8273-084de55a86c0"
+      "id": "3ad52697-6d98-4d80-8273-084de55a86c0",
+      "firstname": "homer",
+      "lastname": "simpson",
+      "_locals": {}
     },
     {
       "firstName": "marge",
@@ -13,6 +16,13 @@
       "email": "marge@simpson.com",
       "password": "secret",
       "id": "2b6f0989-7b7f-4a38-ad26-aa06b922d751"
+    },
+    {
+      "firstname": "r",
+      "lastname": "r",
+      "email": "r",
+      "password": "r",
+      "id": "ad2a2020-fa32-11eb-8a1f-4f09d113e3cf"
     }
   ]
 }

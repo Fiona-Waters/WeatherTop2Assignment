@@ -16,6 +16,10 @@ const userStore = {
         this.store.add(this.collection, user);
         this.store.save();
     },
+  
+    saveStore() {
+        this.store.save();
+    },
 
     getUserById(id) {
         return this.store.findOneBy(this.collection, { id: id });
@@ -24,6 +28,8 @@ const userStore = {
     getUserByEmail(email) {
         return this.store.findOneBy(this.collection, { email: email });
     },
+  
+  
 };
 
 module.exports = userStore;
