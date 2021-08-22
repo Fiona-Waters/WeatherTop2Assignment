@@ -1,20 +1,18 @@
 
-<div class = "ui segment" id="chart">
-
+<div class = "ui blue segment" id="chart">
   <script>
-  const data = {
-    
+  const data = {  
     labels: [
       {{#each station.trendLabels}}
         "{{this}}",
       {{/each}}
     ],
-    datasets: [
-      
+    
+    datasets: [    
       {
         name: "Temperature", type: "line",
         values: [
-          {{#each station.tempTrend}}
+          {{#each station.temperatureTrend}}
             {{this}},
           {{/each}}
         ]
@@ -23,7 +21,7 @@
       {
         name: "Wind Speed", type: "line",
         values: [
-          {{#each station.windSpeedTrend}}
+          {{#each station.windTrend}}
             {{this}},
           {{/each}}
         ]
@@ -40,7 +38,7 @@
       {
         name: "Pressure", type: "line",
         values: [
-          {{#each station.pressureTrend}}
+          {{#each station.pressurTrend}}
             {{this}},
           {{/each}}
         ]

@@ -1,5 +1,4 @@
-
-<form class="ui segment form" action="/dashboard/addstation" method="POST">
+<form class="ui blue segment form" action="/dashboard/addstation" method="POST">
     <div class="three fields">
         <div class="field">
             <label><h4>Station Name</h4></label>
@@ -7,9 +6,9 @@
         </div>
         <div class="field">
             <label><h4>Latitude</h4></label>
-            <input placeholder="00.00" type="number" step="0.0000001" maxlength="10" min=-90.0000000" max="90.0000000"
+            <input placeholder="00.00" type="number" step="0.0000001" maxlength="10" min="-90.0000000" max="90.0000000"
                    name="lat" required>
-        </div>
+         </div>                        
         <div class="field">
             <label><h4>Longitude</h4></label>
             <input placeholder="00.00" type="number" step="0.0000001" maxlength="10" min=-180.0000000" max="180.0000000"
@@ -18,3 +17,4 @@
     </div>
     <button class="ui submit button">Add Station</button>
 </form>
+

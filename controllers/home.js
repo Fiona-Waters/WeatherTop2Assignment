@@ -6,10 +6,10 @@ const home = {
   index(request, response) {
     logger.info("home rendering");
     const viewData = {
-      title: "Welcome",
+      title: "Welcome"
     };
     response.render("home", viewData);
-  },
+  }
 };
 
 module.exports = home;
