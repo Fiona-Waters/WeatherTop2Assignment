@@ -31,9 +31,9 @@ const stationStore = {
 
   addReading(id, reading) {
     const station = this.getStation(id);
-    {
-      station.readings.push(reading);
-    }
+    station.readings.push(reading);
+    this.store.save();
+
   },
 
   addStation(station) {

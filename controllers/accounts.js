@@ -62,8 +62,8 @@ const accounts = {
 
   updateUserDetails(request, response) {
     let user = accounts.getCurrentUser(request);
-    user.firstname = request.body.firstname;
-    user.lastname = request.body.lastname;
+    user.firstName = request.body.firstname;
+    user.lastName = request.body.lastname;
     user.email = request.body.email;
     user.password = request.body.password;
     userstore.saveStore();
