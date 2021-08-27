@@ -1,3 +1,12 @@
+/**
+ * station store model handling station related data.
+ *
+ * @author Fiona Waters
+ * @date 27.08.2021
+ * @version 4
+ */
+
+
 const _ = require("lodash");
 const JsonStore = require("./json-store");
 const logger = require("../utils/logger");

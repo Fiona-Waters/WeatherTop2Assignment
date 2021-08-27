@@ -1,3 +1,12 @@
+/**
+ * JSON store model handling store related data.
+ *
+ * @author Fiona Waters
+ * @date 27.08.2021
+ * @version 4
+ */
+
+
 "use strict";
 
 const low = require("lowdb");

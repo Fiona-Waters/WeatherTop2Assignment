@@ -1,3 +1,11 @@
+/**
+ * Analytics util handling data calculations and related methods.
+ *
+ * @author Fiona Waters
+ * @date 27.08.2021
+ * @version 4
+ */
+
 "use strict";
 
 const stationStore = require("../models/station-store.js");

@@ -1,3 +1,11 @@
+/**
+ * Accounts controller handling all user account related actions.
+ *
+ * @author Fiona Waters
+ * @date 27.08.2021
+ * @version 4
+ */
+
 "use strict";
 
 const userstore = require("../models/user-store");

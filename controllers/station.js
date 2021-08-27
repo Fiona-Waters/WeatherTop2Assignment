@@ -1,3 +1,11 @@
+/**
+ * Station controller handling all Station related actions.
+ *
+ * @author Fiona Waters
+ * @date 27.08.2021
+ * @version 4
+ */
+
 "use strict";
 
 const uuid = require("uuid");
@@ -7,6 +15,11 @@ const analytics = require("../utils/analytics.js");
 const axios = require("axios");
 
 const station = {
+
+  /**
+   * station index method includes call for all calculations to be shown using weathercards partial, and info from API to be shown
+   * using trend-charts partial.
+   */
   async index(request, response) {
     const stationId = request.params.id;
     const station = stationStore.getStation(stationId);
@@ -47,7 +60,9 @@ const station = {
 
     response.render("station", viewData);
   },
-
+  /**
+   * addReading method to facilitate user added readings
+   */
   addReading(request, response) {
     const stationId = request.params.id;
     const station = stationStore.getStation(stationId);
@@ -79,6 +94,9 @@ const station = {
     response.redirect("/station/" + stationId);
   },
 
+  /**
+   * addReport method to facilitate automatic weather reading from open weather map API
+   */
   async addreport(request, response) {
     logger.info("rendering new report");
     const stationId = request.params.id;

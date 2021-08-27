@@ -1,3 +1,11 @@
+/**
+ * user store model handling user related data.
+ *
+ * @author Fiona Waters
+ * @date 27.08.2021
+ * @version 4
+ */
+
 "use strict";
 
 const _ = require("lodash");
