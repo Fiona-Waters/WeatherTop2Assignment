@@ -25,13 +25,6 @@ const station = {
     const station = stationStore.getStation(stationId);
     analytics.readingCalculations(station);
 
-    const currentDate = new Date();
-    const timestamp = new Date(
-      currentDate.getTime() - currentDate.getTimezoneOffset() * 60000
-    )
-      .toISOString()
-      .replace("T", " ")
-      .replace("Z", "");
     const oneCallRequest = `https://api.openweathermap.org/data/2.5/onecall?lat=${station.lat}&lon=${station.lng}&units=metric&appid=a5473e1c84ba16781dfe380fbabf11f2`;
     const result = await axios.get(oneCallRequest);
     if (result.status == 200) {
@@ -55,7 +48,6 @@ const station = {
     const viewData = {
       title: "Station",
       station: station,
-      date: timestamp
     };
 
     response.render("station", viewData);
